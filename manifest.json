@@ -1,6 +1,6 @@
 {
-    "name": "flutter_wallet_app",
-    "short_name": "flutter_wallet_app",
+    "name": "ton88_wallet",
+    "short_name": "ton88_wallet",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
