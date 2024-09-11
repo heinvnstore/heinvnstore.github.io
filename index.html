@@ -14,20 +14,11 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-  <style>
-    .scrollable-element {
-      overflow-y: scroll;
-      height: 32rem;
-      font-size: 6.25rem;
-      border: 1px solid;
-    }
-  </style>
-
-  <base href="/">
+  <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="TON88 Wallet.">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -43,27 +34,12 @@
 </head>
 <body>
   <script src="flutter_bootstrap.js" async>
-    function ensureDocumentIsScrollable() {
-        const isScrollable =
-          document.documentElement.scrollHeight > window.innerHeight;
-        if (!isScrollable) {
-          document.documentElement.style.setProperty(
-            "height",
-            "calc(100vh + 1px)",
-            "important"
-          );
-        }
-      }
-      function preventCollapse() {
-        if (window.scrollY === 0) {
-          window.scrollTo(0, 1);
-        }
-      }
-
-      const scrollableElement = document.querySelector(".scrollable-element");
-      scrollableElement.addEventListener("touchstart", preventCollapse);
-
-      window.addEventListener("load", ensureDocumentIsScrollable);
+    document.addEventListener("touchmove", function (event) {
+    event.preventDefault();
+  },
+    {
+        passive: false
+    });
   </script>
 </body>
 </html>
